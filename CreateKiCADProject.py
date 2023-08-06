@@ -84,11 +84,11 @@ class Application(tk.Frame):
 
             subprocess.run(["git", "init"], cwd=self.txt_project_name.get(), check=True)
             subprocess.run(["git", "add", "."], cwd=self.txt_project_name.get(), check=True)
-            subprocess.run(["git", "commit", "-m", '"Initial Commit"'], cwd=self.txt_project_name.get(), check=True)
+            subprocess.run(["git", "commit", "-m", '"chore: initial Commit"'], cwd=self.txt_project_name.get(), check=True)
             subprocess.run(["git", "remote", "add", "origin", self.txt_repo_url.get()], cwd=self.txt_project_name.get(), check=True)
-            subprocess.run(["git", "push", "-u", "origin", "master","--force"], cwd=self.txt_project_name.get(), check=True)
+            subprocess.run(["git", "push", "-u", "origin", "main","--force"], cwd=self.txt_project_name.get(), check=True)
             subprocess.run(["git", "submodule", "add", "https://github.com/ShirkyBooi/KiCADLibraries", "hardware/KiCAD Libraries"], cwd=self.txt_project_name.get(), check=True)
-            subprocess.run(["git", "commit", "-m", '"Added Library Submodule"'], cwd=self.txt_project_name.get(), check=True)
+            subprocess.run(["git", "commit", "-m", '"chore: added Library Submodule"'], cwd=self.txt_project_name.get(), check=True)
             subprocess.run(["git", "push"], cwd=self.txt_project_name.get(), check=True)
         except subprocess.CalledProcessError as e:
             messagebox.showerror("Error", str(e))
